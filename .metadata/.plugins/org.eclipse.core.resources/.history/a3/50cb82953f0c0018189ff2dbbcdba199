@@ -1,0 +1,40 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import java.util.Scanner;
+import static java.lang.System.*;
+import static java.lang.Math.*;
+
+public class Lab03c
+{
+	public static void main( String[] args )
+   {
+		int a,b,c;
+		
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("Enter a :: ");
+		a = keyboard.nextInt();
+		System.out.println(a);
+		
+		System.out.print("Enter b :: ");
+		b = keyboard.nextInt();
+		System.out.println(b);
+	 
+		System.out.print("Enter c :: ");
+		c= keyboard.nextInt();
+		System.out.println(c);
+		
+		Quadratic one = new Quadratic();
+		one.setEquation(a,b,c);
+		one.calcRoots();
+		one.print();
+		
+   	
+   	
+		
+		
+	}
+}

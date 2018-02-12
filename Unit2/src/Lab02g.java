@@ -8,6 +8,8 @@ public class Lab02g
 {
 	public static void main( String[] args )
 	{
-		//add test cases		
+		Fahrenheit convert = new Fahrenheit();
+		convert.setFahrenheit(100);
+		convert.print();
 	}
 }

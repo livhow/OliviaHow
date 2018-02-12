@@ -8,8 +8,15 @@ public class Lab02e
 {
 	public static void main( String[] args )
    {
-		//add test cases
+		Circle one = new Circle();
+		one.setRadius(2);
+		one.calculateArea();
+		one.print();
 		
+		Circle two = new Circle();
+		two.setRadius(30);
+		two.calculateArea();
+		two.print();
 		
 		
 	}
