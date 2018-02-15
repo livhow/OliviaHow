@@ -57,6 +57,7 @@ public class Magpie2
 				{
 					response = "Yeah I've heard he's a pretty cool guy.";
 				}
+				//new responses
 				else if (statement.indexOf("pineapples") >= 0)
 				{
 					response = "pineapples are the best fruit. No contest.";

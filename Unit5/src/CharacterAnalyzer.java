@@ -13,14 +13,12 @@ public class CharacterAnalyzer
 
 	public CharacterAnalyzer()
 	{
-
-
+		theChar = 0;
 	}
 
 	public CharacterAnalyzer(char c)
 	{
 		theChar = c;
-
 	}
 
 	public void setChar(char c)
@@ -84,7 +82,7 @@ public class CharacterAnalyzer
 		
 		if (isNumber()==false && isLower()==false && isUpper())
 		{
-			return ""+getChar() + " is a uppercase character. ASCII == " + getASCII() + "\n";	 
+			return ""+getChar() + " is an uppercase character. ASCII == " + getASCII() + "\n";	 
 		}
 	  return "Howdy";
 	}

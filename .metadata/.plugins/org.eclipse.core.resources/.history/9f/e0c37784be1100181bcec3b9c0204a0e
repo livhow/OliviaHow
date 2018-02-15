@@ -1,0 +1,56 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class - 
+//Lab  -
+
+import static java.lang.System.*;
+
+public class Triples
+{
+   private int number;
+
+	public Triples()
+	{
+		this(0);
+	}
+
+	public Triples(int num)
+	{
+//a2 + b2 == c2
+//if a == odd, b==even, a ==even, b == odd, c == always odd
+//GCF can be <= 1
+		number = 0;
+	}
+
+	public void setNum(int num)
+	{
+		number = num;
+
+	}
+	
+	private int greatestCommonFactor(int a, int b, int c)
+	{
+		int max = 0;
+		return 1;
+	}
+
+	public String toString()
+	{
+		String output="";
+		int a = 0, b = 0, c = 0;
+		int sum = number;
+        for (a = 1; a <= sum/3; a++)
+        {
+            for (b = a + 1; b <= sum/2; b++)
+            {
+                c = sum - a - b;
+                if ( c > 0 && (a*a + b*b == c*c) )
+                {
+                   output = output + "a=%d, b=%d, c=%d\n" + a + b + c;
+                }
+            }
+        }
+		return output+"\n";
+	}
+}

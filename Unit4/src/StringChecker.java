@@ -12,7 +12,7 @@ public class StringChecker
 
 	public StringChecker()
 	{
-
+		word = "";
 
 	}
 
@@ -23,7 +23,7 @@ public class StringChecker
 
    public void setString(String s)
    {
-   	word=s;
+   		word=s;
    }
 
 	public boolean findLetter(char c)

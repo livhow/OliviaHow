@@ -62,8 +62,7 @@ public class LoopStats
 		int total = 0;
 		for(int counter = start; counter <= stop; counter++)
 		{
-			total = total + start;
-			System.out.println(total);
+			total = total + counter;
 		}
 		return total;
 	}

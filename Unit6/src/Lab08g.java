@@ -18,6 +18,19 @@ public class Lab08g
 		check.toString();
 		out.println(check);
 		
+		check.setNums(2,8);
+		check.getEvenCount();
+		check.getOddCount();
+		check.getTotal();
+		check.toString();
+		out.println(check);
+		
+		check.setNums(5,15);
+		check.getEvenCount();
+		check.getOddCount();
+		check.getTotal();
+		check.toString();
+		out.println(check);
 		
 		
 		
