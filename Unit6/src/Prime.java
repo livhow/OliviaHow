@@ -13,13 +13,12 @@ public class Prime
 
 	public Prime()
 	{
-		number = 0;
-
+		setPrime(0);
 	}
 
 	public Prime(int num)
 	{
-		number = num;
+		setPrime(num);
 	}
 
 	public void setPrime(int num)
@@ -29,7 +28,7 @@ public class Prime
 
 	public boolean isPrime()
 	{
-		double counter = 2;
+		int counter = 2;
 			while (counter < number)
 			{
 				if (number % counter == 0)

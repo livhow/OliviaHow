@@ -1,0 +1,128 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import static java.lang.System.*;
+
+public class RomanNumeral
+{
+	private Integer number;
+	private String roman;
+
+	private final static int[] NUMBERS= {1000,900,500,400,100,90,
+													50,40,10,9,5,4,1};
+
+	private final static String[] LETTERS = {"M","CM","D","CD","C","XC",
+												  "L","XL","X","IX","V","IV","I"};
+
+	public RomanNumeral(String str)
+	{
+		setRoman(str);
+	}
+
+	public RomanNumeral(Integer orig)
+	{
+		setNumber(orig);
+	}
+
+	public void setNumber(Integer num)
+	{
+		number = num;
+	}
+
+	public void setRoman(String rom)
+	{
+		roman = rom;
+	}
+
+	public Integer getNumber()
+	{
+		String local = roman;
+		int holder = 0;
+		for (int i = 0; i < roman.length(); i++)
+		{
+					if (local.contains(LETTERS[i]))
+					{
+						if (roman.substring(i, i+1) == "M")
+						{
+							number += 1000;
+						}
+						if (roman.substring(i, i+1) == "L")
+						{
+							number += 50;
+						}
+						if (roman.substring(i, i+1) == "V")
+						{
+							number += 5;
+						}
+						else if(roman.substring(i, i+1) == "D")
+						{
+							number += 500;
+						}
+						else if(roman.substring(i, i+1) == "C")
+						{
+							if(roman.substring(i, i+2) == "CM")
+							{
+								number += 900;
+							}
+							else if(roman.substring(i, i+2) == "CD")
+							{
+								number += 400;
+							}
+							else
+							{
+								number += 100;
+							}
+							}
+							else if (roman.substring(i, i+1) == "X")
+							{
+								if (roman.substring(i, i+2) == "XC")
+								{
+									number += 90;
+								}
+								else if (roman.substring(i, i+2) == "XL")
+								{
+									number += 40;
+								}
+								else
+								{
+									number += 10;
+								}
+							}
+							else if (roman.substring(i, i+1) == "I")
+							{
+								if (roman.substring(i, i+2) == "IX")
+								{
+									number += 9;
+								}
+								else if (roman.substring(i, i+2) == "IV")
+								{
+									number += 4;
+								}
+								else
+								{
+									number += 1;
+								}
+							}
+						}
+				}
+		return number;
+	}
+
+	public String toString()
+	{
+		String output = "";
+		for (int i = 0; i < NUMBERS.length; i++)
+		{
+			while (number >= NUMBERS[i])
+			{
+				output = output + LETTERS[i];
+				number -= NUMBERS[i];
+			}
+		}
+		
+		return output + "\n";
+	}
+}

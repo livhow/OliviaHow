@@ -17,17 +17,12 @@ public class Triples
 
 	public Triples(int num)
 	{
-//a2 + b2 == c2
-//if a == odd, b==even, a ==even, b == odd, c == always odd
-//GCF can be <= 1
 		number = 0;
 	}
 
 	public void setNum(int num)
 	{
 		number = num;
-
-
 	}
 	
 	private int greatestCommonFactor(int a, int b, int c)

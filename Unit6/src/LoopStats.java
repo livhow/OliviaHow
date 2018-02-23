@@ -14,20 +14,17 @@ public class LoopStats
 	{
 		start = 0;
 		stop = 0;
-
 	}
 
 	public LoopStats(int beg, int end)
 	{
-		start = beg;
-		stop = end;
+		setNums(beg,end);
 	}
 
 	public void setNums(int beg, int end)
 	{
 		start = beg;
 		stop = end;
-
 	}
 
 	public int getEvenCount()
