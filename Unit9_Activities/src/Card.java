@@ -44,7 +44,6 @@ public class Card {
 	 */
 	public String suit() 
 	{
-		suit = suit.toLowerCase();
 		return suit;
 	}
 
@@ -54,7 +53,6 @@ public class Card {
 	 */
 	public String rank() 
 	{
-		rank = rank.toLowerCase();
 		return rank;
 	}
 
@@ -75,11 +73,7 @@ public class Card {
 	 */
 	public boolean matches(Card otherCard) 
 	{
-		if (suit == otherCard.suit().toLowerCase() && rank == otherCard.rank().toLowerCase() && pointValue == otherCard.pointValue())
-		{
-			return true;
-		}
-		return false;
+		return(suit.equals(otherCard.suit) && rank.equals(otherCard.rank) && pointValue == otherCard.pointValue);
 	}
 
 	/**

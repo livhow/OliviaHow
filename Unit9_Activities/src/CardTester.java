@@ -9,7 +9,7 @@ public class CardTester {
 	 */
 	public static void main(String[] args) 
 	{
-		Card test1 = new Card("Jack", "Hearts", 11);
+		Card test1 = new Card("Jack", "Hearts", 10);
 		test1.suit();
 		test1.rank();
 		test1.pointValue();
@@ -19,7 +19,7 @@ public class CardTester {
 		test2.suit();
 		test2.rank();
 		test2.pointValue();
-		test2.matches(test1);
+		System.out.println(test2.matches(test1));
 		System.out.println(test2.toString());
 		
 		Card test3 = new Card("Ace", "Spades", 1);
@@ -28,6 +28,13 @@ public class CardTester {
 		test3.pointValue();
 		test3.matches(test1);
 		System.out.println(test3.toString());
+		
+		Card test4 = new Card("Jack", "Hearts", 10);
+		test4.suit();
+		test4.rank();
+		test4.pointValue();
+		System.out.println(test4.matches(test1));
+		System.out.println(test4.toString());
 
 	}
 }

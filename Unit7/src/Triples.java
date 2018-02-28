@@ -10,12 +10,11 @@ public class Triples
 {
    private int number;
 
-	public Triples()
+   public Triples()
 	{
 		this(0);
 	}
-
-	public Triples(int num)
+   public Triples(int num)
 	{
 		number = 0;
 	}

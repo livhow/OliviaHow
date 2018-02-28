@@ -15,14 +15,14 @@ public class GuessingGame
 
 	public GuessingGame()
 	{
-		upperBound = 0;
-		guesses = 0;
-		saveAns = 0.0;
-		percent = 0.0f;
+		setGuessingGame(0);
 	}
 	public void setGuessingGame(int stop)
 	{
 		upperBound = stop;
+		guesses = 0;
+		saveAns = 0.0;
+		percent = 0.0f;
 	}
 
 	public void playGame()

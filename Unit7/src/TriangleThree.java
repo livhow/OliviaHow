@@ -13,8 +13,7 @@ public class TriangleThree
 
 	public TriangleThree()
 	{
-		size = 0;
-		letter = "";
+		setTriangle("",0);
 	}
 
 	public void setTriangle( String let, int sz )
