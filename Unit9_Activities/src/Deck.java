@@ -35,6 +35,7 @@ public class Deck {
 	
 	{
 		cards = new Card[(ranks.length) * (suits.length)];
+		
 		System.out.println(ranks.length + " " + suits.length + " " + values.length);
             		for(int c = 0; c < suits.length ; c++)
             		{

@@ -12,24 +12,29 @@ public class Shuffler {
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 4;
+	private static final int VALUE_COUNT = 6;
 
 	/**
 	 * Tests shuffling methods.
 	 * @param args is not used.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
+		
 		System.out.println("Results of " + SHUFFLE_COUNT +
 								 " consecutive perfect shuffles:");
-		int[] values1 = new int[VALUE_COUNT];
-		for (int i = 0; i < values1.length; i++) {
-			values1[i] = i;
-			}
+		
+		int[] val1 = new int[VALUE_COUNT];
+		
+		for (int i = 0; i < val1.length; i++) 
+		{
+			val1[i] = i;
+		}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
+			perfectShuffle(val1);
 			System.out.print("  " + j + ":");
-			for (int k = 0; k < values1.length; k++) {
-				System.out.print(" " + values1[k]);
+			for (int k = 0; k < val1.length; k++) {
+				System.out.print(" " + val1[k]);
 			}
 			System.out.println();
 		}
@@ -61,21 +66,28 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) 
 	{
-		int[] firsthalf = new int[VALUE_COUNT/2];
-		int[] sechalf = new int[VALUE_COUNT - VALUE_COUNT/2];
+		int[] firstHalf = new int[VALUE_COUNT/2];
+		int[] secHalf = new int[VALUE_COUNT - VALUE_COUNT/2];
 		
-		for( int i = 0; i <= (VALUE_COUNT/2); i++)
+		int half = VALUE_COUNT/2;
+		
+		for( int i = 0; i <= (half); i++)
 		{
-			firsthalf[i] = values[i];
+			firstHalf[i] = values[i];
 		}
-		for( int i = 0; i <= (VALUE_COUNT -(VALUE_COUNT/2)); i++)
+		for( int i = 0; i <= (VALUE_COUNT - half); i++)
 		{
-			sechalf[i] = values[i + (VALUE_COUNT/2)];
+			secHalf[i] = values[i + (half)];
 		}
-		for( int i = 0; i <= (VALUE_COUNT/2); i++)
+		for( int i = 0; i <= (half); i++)
 		{
-			values[2 * i] = sechalf[i];
+			values[2 * i] = secHalf[i];
 		}
+        for( int i = 0; i < half; i++ ) 
+        {
+            values[ 2 * i ] = secHalf[i];
+            values[ 2 * i + 1 ] = firstHalf[i];
+        }
 	}
 
 	/**
@@ -91,6 +103,13 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) 
 	{
-		
+		for( int i = VALUE_COUNT - 1; i >= 0; i-- ) 
+		{
+            int r = (int)(Math.random() * i);
+            int temp = values[r];
+            values[r] = values[i];
+            values[i] = temp;
+		}
 	}
 }
+
