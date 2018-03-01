@@ -36,19 +36,15 @@ public class Deck {
 	{
 		cards = new Card[(ranks.length) * (suits.length)];
 		
-		System.out.println(ranks.length + " " + suits.length + " " + values.length);
             		for(int c = 0; c < suits.length ; c++)
             		{
             			for(int d = 0; d < ranks.length; d++ )
                     	{
 	            			int cardIndex = (suits.length)*d + c;
-	            			System.out.println(d + " " + cardIndex);
 	            			cards[cardIndex] = new Card(ranks[d],suits[c],values[d]);
-	            			System.out.println(cards[cardIndex]);
                     	}
             		}
             	size = cards.length;
-            	System.out.println(Arrays.toString(cards));
             	shuffle();
 	}
 

@@ -16,6 +16,6 @@ public class DeckTester
 	{
 		
 		Deck test = new Deck(Ranks, Suits,pointValues);
-		test.toString();
+		System.out.println(test);
 	}
 }
