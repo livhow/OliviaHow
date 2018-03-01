@@ -34,17 +34,18 @@ public class Deck {
 	public Deck(String[] ranks, String[] suits, int[] values) 
 	
 	{
-		cards = new Card[ranks.length * suits.length];
+		cards = new Card[(ranks.length) * (suits.length)];
 		System.out.println(ranks.length + " " + suits.length + " " + values.length);
-            	for(int b = 0; b <= ranks.length; b++ )
-            	{
             		for(int c = 0; c < suits.length ; c++)
             		{
-            			int cardIndex = (suits.length)*b + c;
-            			System.out.println(b + " " + cardIndex);
-            			cards[cardIndex] = new Card(ranks[b],suits[c],values[b]);
+            			for(int d = 0; d < ranks.length; d++ )
+                    	{
+	            			int cardIndex = (suits.length)*d + c;
+	            			System.out.println(d + " " + cardIndex);
+	            			cards[cardIndex] = new Card(ranks[d],suits[c],values[d]);
+	            			System.out.println(cards[cardIndex]);
+                    	}
             		}
-            	}
             	size = cards.length;
             	System.out.println(Arrays.toString(cards));
             	shuffle();
@@ -75,14 +76,14 @@ public class Deck {
 	 */
 	public void shuffle() 
 	{
-		for (int k = cards.length -1; k> 0; k--)
+		for (int k = cards.length -1; k >= 0; k--)
 		{
 			int check = k +1;
 			int start = 0;
 			int randPos = (int) (Math.random() * check) + start;
-			Card temp = cards[k];
+			Card temporary = cards[k];
 			cards[k] = cards[randPos];
-			cards[randPos] = temp;
+			cards[randPos] = temporary;
 			size = cards.length;
 		}
 	}
