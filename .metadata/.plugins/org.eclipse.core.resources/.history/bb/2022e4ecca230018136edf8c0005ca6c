@@ -34,55 +34,50 @@ public class Grades
 		grades = new double[size];
 		usableString = gradeList.substring(gradeList.indexOf("-") + 1);
 		Scanner file = new Scanner(usableString);
-		int counter = 0;
 		while (file.hasNext())
 		{
 			double grade = file.nextDouble();
-			setGrade(counter, grade);
-			counter++;
-			System.out.print(counter + ", " + grade + "\n");
+			for( int i = 0; i < grades.length; i++)
+			{
+				grades[i] = grade;
+				System.out.println(grade);
+			}
 		}
 	}
 	
 	public void setGrade(int spot, double grade)
 	{
-
-			grades[spot] = grade;
 	}
 	
 	public double getSum()
 	{
 		double sum=0.0;
-		for (int i = 0; i < grades.length; i++)
-		{
-			sum += grades[i];
-		}
+
+
+
+
 		return sum;
 	}
 	
 	public double getLowGrade()
 	{
 		double low = Double.MAX_VALUE;
-		for( int i = 0; i < grades.length; i++)
-		{
-			if (grades[i] < low)
-			{
-				low = grades[i];
-			}
-		}
+
+
+
+
+
 		return low;
 	}
 	
 	public double getHighGrade()
 	{
 		double high = Double.MIN_VALUE;
-		for( int i = 0; i < grades.length; i++)
-		{
-			if (grades[i] > high)
-			{
-				high = grades[i];
-			}
-		}
+
+
+
+
+
 		return high;
 	}
 	

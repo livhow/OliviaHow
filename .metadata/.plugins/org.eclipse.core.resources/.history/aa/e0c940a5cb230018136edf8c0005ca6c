@@ -63,26 +63,22 @@ public class Grades
 	public double getLowGrade()
 	{
 		double low = Double.MAX_VALUE;
-		for( int i = 0; i < grades.length; i++)
-		{
-			if (grades[i] < low)
-			{
-				low = grades[i];
-			}
-		}
+
+
+
+
+
 		return low;
 	}
 	
 	public double getHighGrade()
 	{
 		double high = Double.MIN_VALUE;
-		for( int i = 0; i < grades.length; i++)
-		{
-			if (grades[i] > high)
-			{
-				high = grades[i];
-			}
-		}
+
+
+
+
+
 		return high;
 	}
 	

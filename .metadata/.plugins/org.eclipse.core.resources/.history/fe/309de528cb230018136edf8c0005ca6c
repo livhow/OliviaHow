@@ -40,7 +40,7 @@ public class Grades
 			double grade = file.nextDouble();
 			setGrade(counter, grade);
 			counter++;
-			System.out.print(counter + ", " + grade + "\n");
+			System.out.print(counter + " , " + grade + "\n");
 		}
 	}
 	
@@ -53,36 +53,32 @@ public class Grades
 	public double getSum()
 	{
 		double sum=0.0;
-		for (int i = 0; i < grades.length; i++)
-		{
-			sum += grades[i];
-		}
+
+
+
+
 		return sum;
 	}
 	
 	public double getLowGrade()
 	{
 		double low = Double.MAX_VALUE;
-		for( int i = 0; i < grades.length; i++)
-		{
-			if (grades[i] < low)
-			{
-				low = grades[i];
-			}
-		}
+
+
+
+
+
 		return low;
 	}
 	
 	public double getHighGrade()
 	{
 		double high = Double.MIN_VALUE;
-		for( int i = 0; i < grades.length; i++)
-		{
-			if (grades[i] > high)
-			{
-				high = grades[i];
-			}
-		}
+
+
+
+
+
 		return high;
 	}
 	
