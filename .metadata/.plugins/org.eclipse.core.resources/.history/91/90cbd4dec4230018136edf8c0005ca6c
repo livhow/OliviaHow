@@ -1,0 +1,98 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import static java.lang.System.*;
+
+public class Histogram
+{
+	private ArrayList<Integer> count;
+	private ArrayList<Character> letters;
+	private String fileName;
+	private String currentDirectory = System.getProperty("user.dir");
+
+	public Histogram()
+	{
+		count = new ArrayList<Integer>();
+		letters = new ArrayList<Character>();
+		fileName = "";
+	}
+	public Histogram(char[] values, String fName)
+	{
+			this();
+			count = new ArrayList<Integer>();
+			letters = new ArrayList<Character>();
+			for( int i = 0; i < values.length; i++)	
+			{
+				letters.add(values[i]);
+			}
+			fileName = currentDirectory + "\\are\\" + fName;
+		out.println("search letters = "+letters);
+	}
+
+	public void loadAndAnalyzeFile() throws IOException
+	{
+
+		Scanner fileLoad = new Scanner(new File("H:\\Unit10\\Unit10-2016\\Unit10-Assignments\\Lab16e\\" + fileName));
+		
+			for (int i = 0; i < letters.size(); i++)
+			{
+				count.add(0);
+			}
+			Scanner file = new Scanner(new File(fileName));
+			while (file.hasNext())
+			{
+				String tester = file.next();
+				for(int i = 0; i < tester.length(); i++)
+				{
+					for(int j = 0;j < letters.size(); j++)
+					{
+						if(tester.charAt(i) == (letters.get(j)))
+								{
+									count.set(j, count.get(j) + 1);
+								}
+					}
+				}
+			}
+	}
+
+	public char mostFrequent()
+	{
+		int max = 0;
+		for( int i = 0; i < count.size(); i++)
+		{
+			if (count.get(i) > count.get(max))
+			{
+				max = letters.get(i);
+			}
+		}
+		return letters.get(max);
+	}
+
+	public char leastFrequent()
+	{
+		int min = 0;
+		for( int i = 0; i < count.size(); i++)
+		{
+			if (count.get(i) < count.get(min))
+			{
+				min = letters.get(i);
+			}
+		}
+		return letters.get(min);
+	}
+
+	public String toString()
+	{
+	   return fileName
+	   + "\n" + letters
+	   + "\n" + count + "\n\n\n";
+	}
+}
