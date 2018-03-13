@@ -16,7 +16,7 @@ public class GradeBookFileRunner
    {
 		out.println("Welcome to the Class Stats program!");
 		
-		Scanner file = new Scanner(new File("gradebook.dat"));
+		Scanner file = new Scanner(new File("H:\\Unit11\\Unit11-2016\\Unit11-Assignments\\Lab19b\\gradebook.dat"));
 
 
 

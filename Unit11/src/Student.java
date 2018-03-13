@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -22,62 +22,58 @@ public class Student
 	
 	public Student(String name, String gradeList)
 	{
-
-
-
+		setName(name);
+		setGrades(gradeList);
 	}
 	
 	public void setName(String name)
 	{
-
-
+		myName = name;
 	}	
 	
 	public void setGrades(String gradeList)
 	{
-
-	
+		myGrades = new Grades(gradeList);
 	}
 	
 	public void setGrade(int spot, double grade)
 	{
-
-
+		
 	}
 
 	public String getName()
 	{
-		return "";
+		return myName;
 	}
 	
 	public int getNumGrades()
 	{
-		return 0;
+		return myGrades.getNumGrades();
 	}
 
 	public double getSum()
 	{
-		return 0.0;
+		return myGrades.getSum();
 	}
 	
 	public double getAverage()
 	{
-		return 0.0;
+		return (myGrades.getSum()/myGrades.getNumGrades());
 	}
 
 	public double getAverageMinusLow()
 	{
-		return 0.0;
+		return ( (myGrades.getSum() - myGrades.getLowGrade()) / (myGrades.getNumGrades() -1));
 	}
 	
 	public double getHighGrade()
 	{
-		return 0.0;		
+		return myGrades.getHighGrade();		
 	}
 	
 	public double getLowGrade()
 	{
-		return 0.0;	
+		return myGrades.getLowGrade();	
 	}
 	
 	public String toString()

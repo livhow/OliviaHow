@@ -1,0 +1,96 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import static java.lang.System.*;
+
+public class Monster implements Comparable
+{
+	private int myWeight;
+	private int myHeight;
+	private int myAge;
+
+	public Monster()
+	{
+		myWeight = 0;
+		myHeight = 0;
+		myAge = 0;
+	}
+
+	public Monster(int ht)
+	{
+		setHeight(ht);
+	}
+	public Monster(int ht, int wt)
+	{
+		setHeight(ht);
+		setWeight(wt);
+	}
+	public Monster(int ht, int wt, int age)
+	{
+		setHeight(ht);
+		setWeight(wt);
+		setAge(age);
+	}
+	public void setHeight(int ht)
+	{
+		myHeight = ht;
+	}
+	public void setWeight(int wt)
+	{
+		myWeight = wt;
+	}
+	public void setAge(int age)
+	{
+		myAge = age;
+	}
+	
+	public int getHeight()
+	{
+		return myHeight;
+	}
+	public int getWeight()
+	{
+		return myWeight;
+	}
+	public int getAge()
+	{
+		return myAge;
+	}
+	
+	//creates a new copy of this Object
+	public Monster clone()
+	{
+	   return new Monster(myHeight, myWeight, myAge);
+	}
+
+	public boolean equals( Monster obj )
+	{
+		return (myHeight == obj.getHeight() && myWeight == obj.getWeight() && myAge == obj.getAge());
+	}
+
+	public int compareTo( Object obj )
+	{
+		Monster rhs = (Monster)obj;
+		System.out.println(rhs);
+		if (myHeight > rhs.getHeight() && myWeight > rhs.getWeight())
+		{
+			return 1;
+		}
+		else if (myHeight == rhs.getHeight() && myWeight == rhs.getWeight())
+		{
+			return 0;
+		}
+		return -1;
+	}
+
+	public String toString()
+	{
+		String output = "";
+		return output;
+	}
+	
+	
+}

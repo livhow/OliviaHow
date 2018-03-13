@@ -40,7 +40,6 @@ public class Grades
 			double grade = file.nextDouble();
 			setGrade(counter, grade);
 			counter++;
-			System.out.print(counter + ", " + grade + "\n");
 		}
 	}
 	

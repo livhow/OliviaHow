@@ -1,0 +1,38 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import static java.lang.System.*;
+
+import java.util.Scanner;
+
+public class Word implements Comparable<Word>
+{
+	private String word;
+
+	public Word( String s )
+	{
+		word = s;
+	}
+
+	public int compareTo( Word rhs )
+	{
+		Scanner file = new Scanner(rhs);
+		while (file.hasNext())
+		{
+			double set = file.nextInt();
+		}
+		
+		
+		
+		
+		return 0;
+	}
+
+	public String toString()
+	{
+		return "";
+	}
+}
