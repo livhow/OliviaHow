@@ -9,6 +9,8 @@ import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
 
+import java.lang.reflect.Array;
+
 public class Class
 {
 	private String name;
@@ -72,36 +74,14 @@ public class Class
 
 	public String getStudentWithHighestAverage()
 	{
-		double high = Double.MIN_VALUE;
-		String hName ="";
-		
-		for (int i = 0; i < studentList.length; i++)
-		{
-			if ( getStudentAverage(i) > high)
-			{
-				high = getStudentAverage(i);
-				hName = getStudentName(i);
-			}
-		}
-
-		return hName;
+		sort();		
+		return getStudentName(studentList.length - 1);
 	}
 
 	public String getStudentWithLowestAverage()
 	{
-		double low = Double.MAX_VALUE;
-		String hName ="";		
-
-		for (int i = 0; i < studentList.length; i++)
-		{
-			if ( getStudentAverage(i) < low)
-			{
-				low = getStudentAverage(i);
-				hName = getStudentName(i);
-			}
-		}
-		
-		return hName;
+		sort();		
+		return getStudentName(0);
 	}
 	
 	public String getFailureList(double failingGrade)
@@ -119,6 +99,10 @@ public class Class
 		return output;
 	}
 	
+	public void sort()
+	{
+		Arrays.sort(studentList);
+	}
 	public String toString()
 	{
 		String output=""+getClassName()+"\n";
