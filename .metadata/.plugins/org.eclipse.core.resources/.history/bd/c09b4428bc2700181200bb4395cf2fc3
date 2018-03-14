@@ -1,0 +1,101 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import static java.lang.System.*;
+import static java.util.Arrays.*;
+
+import java.io.File;
+
+public class Grades
+{
+	private List<Double> grades;
+	private String usableString;
+	
+	public Grades()
+	{
+		setGrades("");
+	}
+	
+	public Grades(String gradeList)
+	{
+		//setGrades(gradeList);
+		usableString = "";
+	}
+	
+	public void setGrades(String gradeList)
+	{
+	
+		//"5 - 90 85 95.5 77.5 88"
+		int size = Integer.parseInt(gradeList.substring(0,1));
+		usableString = gradeList.substring(gradeList.indexOf("-") + 1);
+		System.out.println(usableString);
+		Scanner file = new Scanner(usableString);
+		int count = 0;
+		while (file.hasNext())
+		{
+			double grade = file.nextDouble();
+			System.out.println(grade);
+			setGrade(count, grade);
+			count++;
+		}
+	}
+	
+	public void setGrade(int spot, double grade)
+	{
+		grades.add(spot, grade);
+	}
+	
+	public double getSum()
+	{
+		double sum=0.0;
+		for (int i = 0; i < grades.size(); i++)
+		{
+			sum += grades.get(i);
+		}
+		return sum;
+	}
+	
+	public double getLowGrade()
+	{
+		double low = Double.MAX_VALUE;
+		for( int i = 0; i < grades.size(); i++)
+		{
+			if (grades.get(i) < low)
+			{
+				low = grades.get(i);
+			}
+		}
+		return low;
+	}
+	
+	public double getHighGrade()
+	{
+		double high = Double.MIN_VALUE;
+		for( int i = 0; i < grades.size(); i++)
+		{
+			if (grades.get(i) > high)
+			{
+				high = grades.get(i);
+			}
+		}
+		return high;
+	}
+	
+	public int getNumGrades()
+	{
+		return grades.size();
+	}
+	
+	public String toString()
+	{
+		String output="";
+
+		return output;
+	}	
+}

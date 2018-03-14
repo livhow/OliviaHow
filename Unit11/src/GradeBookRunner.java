@@ -21,19 +21,17 @@ public class GradeBookRunner
 		out.println("How many students are in this class?");
 		int classNum = keyboard.nextInt();	
 		
-		Class classSet = new Class(className,classNum);
+		Class classSet = new Class();
 		int count = 1;		
 		
 		do 
 		{	
 			out.println("Enter the name of student " + count + " : ");
-			String studentName = keyboard.nextLine();
-			
-			Scanner keyboard2 = new Scanner(System.in);
+			String studentName = keyboard.next();
 			
 			out.println("Enter the grades for " + studentName);
 			out.println("Use the format x - grades ( 2 - 100 100) : ");
-			String grades = keyboard2.nextLine();
+			String grades = keyboard.next();
 			
 			classSet.addStudent(count-1,new Student(studentName, grades));
 		

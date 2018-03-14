@@ -4,7 +4,8 @@
 //Class -
 //Lab  -
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
@@ -13,48 +14,50 @@ import java.io.File;
 
 public class Grades
 {
-	private double[] grades;
+	private List<Double> grades;
 	private String usableString;
 	
 	public Grades()
 	{
 		setGrades("");
+		grades = new ArrayList<Double>();
 	}
 	
 	public Grades(String gradeList)
 	{
-		setGrades(gradeList);
+		grades = new ArrayList<Double>();
 		usableString = "";
 	}
 	
 	public void setGrades(String gradeList)
 	{
+	
 		//"5 - 90 85 95.5 77.5 88"
-		int size = Integer.parseInt(gradeList.substring(0,1));
-		grades = new double[size];
+		//int size = Integer.parseInt(gradeList.substring(0,1));
 		usableString = gradeList.substring(gradeList.indexOf("-") + 1);
+		System.out.println(usableString);
 		Scanner file = new Scanner(usableString);
-		int counter = 0;
+		int count = 0;
 		while (file.hasNext())
 		{
 			double grade = file.nextDouble();
-			setGrade(counter, grade);
-			counter++;
+			System.out.println(grade);
+			setGrade(count, grade);
+			count++;
 		}
 	}
 	
 	public void setGrade(int spot, double grade)
 	{
-
-			grades[spot] = grade;
+		grades.add(spot, grade);
 	}
 	
 	public double getSum()
 	{
 		double sum=0.0;
-		for (int i = 0; i < grades.length; i++)
+		for (int i = 0; i < grades.size(); i++)
 		{
-			sum += grades[i];
+			sum += grades.get(i);
 		}
 		return sum;
 	}
@@ -62,11 +65,11 @@ public class Grades
 	public double getLowGrade()
 	{
 		double low = Double.MAX_VALUE;
-		for( int i = 0; i < grades.length; i++)
+		for( int i = 0; i < grades.size(); i++)
 		{
-			if (grades[i] < low)
+			if (grades.get(i) < low)
 			{
-				low = grades[i];
+				low = grades.get(i);
 			}
 		}
 		return low;
@@ -75,11 +78,11 @@ public class Grades
 	public double getHighGrade()
 	{
 		double high = Double.MIN_VALUE;
-		for( int i = 0; i < grades.length; i++)
+		for( int i = 0; i < grades.size(); i++)
 		{
-			if (grades[i] > high)
+			if (grades.get(i) > high)
 			{
-				high = grades[i];
+				high = grades.get(i);
 			}
 		}
 		return high;
@@ -87,16 +90,12 @@ public class Grades
 	
 	public int getNumGrades()
 	{
-		return grades.length;
+		return grades.size();
 	}
 	
 	public String toString()
 	{
 		String output="";
-
-
-
-
 
 		return output;
 	}	

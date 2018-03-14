@@ -4,32 +4,36 @@
 //Class -
 //Lab  -
 
-import java.util.Arrays;
+//import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 import static java.lang.System.*;
-import static java.util.Arrays.*;
+//import static java.util.Arrays.*;
 
 import java.lang.reflect.Array;
 
 public class Class
 {
 	private String name;
-	private Student[] studentList;
+	private List<Student> studentList;
 	
 	public Class()
 	{
 		name="";
-		studentList=new Student[0];
+		studentList = new ArrayList<Student>();
 	}
-		public Class(String name1, int stuCount)
+		public Class(String name1)
 	{
 		name = name1;
-		studentList = new Student[stuCount];
+		studentList = new ArrayList<Student>();
 	}
 	
 	public void addStudent(int stuNum, Student s)
 	{
-		studentList[stuNum] = s;
+		
+		studentList.add(stuNum, s);
 	}
 	
 	public String getClassName()
@@ -40,28 +44,28 @@ public class Class
 	public double getClassAverage()
 	{
 		double classAverage=0.0;
-		for (int i = 0; i < studentList.length; i++)
+		for (int i = 0; i < studentList.size(); i++)
 		{
 			classAverage += getStudentAverage(i);
 		}
-		classAverage /= studentList.length;
+		classAverage /= studentList.size();
 
 		return classAverage;
 	}
 	
 	public double getStudentAverage(int stuNum)
 	{
-		return studentList[stuNum].getAverage();
+		return studentList.get(stuNum).getAverage();
 	}
 
 	public double getStudentAverage(String stuName)
 	{
 
-		for (int i = 0; i < studentList.length; i++)
+		for (int i = 0; i < studentList.size(); i++)
 		{
 			if ( getStudentName(i) == stuName)	
 			{
-				return studentList[i].getAverage();
+				return studentList.get(i).getAverage();
 			}
 		}
 		return 0.0;
@@ -69,13 +73,13 @@ public class Class
 	
 	public String getStudentName(int stuNum)
 	{
-		return studentList[stuNum].getName();
+		return studentList.get(stuNum).getName();
 	}
 
 	public String getStudentWithHighestAverage()
 	{
 		sort();		
-		return getStudentName(studentList.length - 1);
+		return getStudentName(studentList.size() - 1);
 	}
 
 	public String getStudentWithLowestAverage()
@@ -87,10 +91,9 @@ public class Class
 	public String getFailureList(double failingGrade)
 	{
 		String output="";
-
-		for (int i = 0; i < studentList.length; i++)
+		for (int i = 0; i < studentList.size(); i++)
 		{
-			if ( getStudentAverage(i) <= failingGrade)
+			if (getStudentAverage(i) <= failingGrade)
 			{
 				output += getStudentName(i);
 			}
@@ -101,7 +104,7 @@ public class Class
 	
 	public void sort()
 	{
-		Arrays.sort(studentList);
+		Collections.sort(studentList);
 	}
 	public String toString()
 	{
